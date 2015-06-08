@@ -1,0 +1,160 @@
+object Form1: TForm1
+  Left = 268
+  Height = 564
+  Top = 117
+  Width = 650
+  Caption = 'info'
+  ClientHeight = 564
+  ClientWidth = 650
+  OnCreate = FormCreate
+  LCLVersion = '1.0.14.0'
+  object DBGrid1: TDBGrid
+    Left = 40
+    Height = 232
+    Top = 304
+    Width = 568
+    AutoFillColumns = True
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object Nama: TEdit
+    Left = 200
+    Height = 23
+    Top = 168
+    Width = 160
+    TabOrder = 1
+  end
+  object NIS: TEdit
+    Left = 200
+    Height = 23
+    Top = 128
+    Width = 160
+    OnChange = NISChange
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 120
+    Height = 16
+    Top = 128
+    Width = 19
+    Caption = 'NIS'
+    ParentColor = False
+    OnClick = Label1Click
+  end
+  object Label2: TLabel
+    Left = 120
+    Height = 16
+    Top = 168
+    Width = 33
+    Caption = 'Nama'
+    ParentColor = False
+    OnClick = Label2Click
+  end
+  object Label3: TLabel
+    Left = 120
+    Height = 16
+    Top = 208
+    Width = 28
+    Caption = 'Kelas'
+    ParentColor = False
+  end
+  object Kelas: TEdit
+    Left = 200
+    Height = 23
+    Top = 208
+    Width = 160
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Left = 120
+    Height = 16
+    Top = 240
+    Width = 35
+    Caption = 'E-mail'
+    ParentColor = False
+  end
+  object email: TEdit
+    Left = 200
+    Height = 23
+    Top = 240
+    Width = 160
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 456
+    Height = 25
+    Top = 128
+    Width = 123
+    Caption = 'Input'
+    OnClick = Button1Click
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 456
+    Height = 25
+    Top = 168
+    Width = 123
+    Caption = 'Edit'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object Button3: TButton
+    Left = 456
+    Height = 25
+    Top = 208
+    Width = 123
+    Caption = 'Hapus'
+    OnClick = Button3Click
+    TabOrder = 7
+  end
+  object Button4: TButton
+    Left = 456
+    Height = 25
+    Top = 240
+    Width = 123
+    Caption = 'Keluar'
+    OnClick = Button4Click
+    TabOrder = 8
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 0
+    Database = 'TugasPD'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'C:\xampp\mysql\bin\libmysql.dll'
+    left = 56
+    top = 8
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from tugaspd5'
+    )
+    Params = <>
+    left = 216
+    top = 8
+  end
+  object ZQuery2: TZQuery
+    Connection = ZConnection1
+    Params = <>
+    DataSource = DataSource1
+    left = 392
+    top = 8
+  end
+  object DataSource1: TDatasource
+    DataSet = ZQuery1
+    left = 552
+    top = 8
+  end
+end
